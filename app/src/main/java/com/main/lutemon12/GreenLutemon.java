@@ -1,8 +1,8 @@
 package com.main.lutemon12;
 
 public class GreenLutemon extends Lutemon {
-    public GreenLutemon(String name) {
-        super(name, "绿色", 6, 3, 19);
+    public GreenLutemon(int id, String name) {
+        super(id, name, "绿色", 6, 3, 19,6);
     }
 
     @Override

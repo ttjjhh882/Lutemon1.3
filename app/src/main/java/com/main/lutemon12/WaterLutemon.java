@@ -1,8 +1,8 @@
 package com.main.lutemon12;
 
 public class WaterLutemon extends Lutemon {
-    public WaterLutemon(String name) {
-        super(name, "蓝色", 5, 5, 20); // 参数：名称、颜色、攻击、防御、最大生命值
+    public WaterLutemon(int id, String name) {
+        super(id, name, "蓝色", 5, 5, 20, 5); // 参数：名称、颜色、攻击、防御、最大生命值
     }
 
     @Override

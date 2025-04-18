@@ -113,28 +113,28 @@ public class GardenFragment extends Fragment {
                     Lutemon newLutemon;
                     switch (color) {
                         case "红色":
-                            newLutemon = new FireLutemon(name);
+                            newLutemon = new FireLutemon(Storage.getNextId(), name);
                             break;
                         case "蓝色":
-                            newLutemon = new WaterLutemon(name);
+                            newLutemon = new WaterLutemon(Storage.getNextId(), name);
                             break;
                         case "白色":
-                            newLutemon = new WhiteLutemon(name);
+                            newLutemon = new WhiteLutemon(Storage.getNextId(), name);
                             break;
                         case "绿色":
-                            newLutemon = new GreenLutemon(name);
+                            newLutemon = new GreenLutemon(Storage.getNextId(), name);
                             break;
                         case "粉色":
-                            newLutemon = new PinkLutemon(name);
+                            newLutemon = new PinkLutemon(Storage.getNextId(), name);
                             break;
                         case "橙色":
-                            newLutemon = new OrangeLutemon(name);
+                            newLutemon = new OrangeLutemon(Storage.getNextId(), name);
                             break;
                         case "黑色":
-                            newLutemon = new BlackLutemon(name);
+                            newLutemon = new BlackLutemon(Storage.getNextId(), name);
                             break;
                         default:
-                            newLutemon = new FireLutemon(name);
+                            newLutemon = new FireLutemon(Storage.getNextId(), name);
                     }
 
                     Storage.getInstance().addLutemon(newLutemon);
