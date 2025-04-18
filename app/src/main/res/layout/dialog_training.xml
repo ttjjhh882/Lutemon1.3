@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:layout_height="150dp"
+    android:background="#44000000"
+    android:padding="16dp">
+
+    <!-- 左右移动的Lutemon图标 -->
+    <ImageView
+        android:id="@+id/imgLutemon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_run"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- 进度条 -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:max="100"
+        android:progress="0"/>
+
+</RelativeLayout>

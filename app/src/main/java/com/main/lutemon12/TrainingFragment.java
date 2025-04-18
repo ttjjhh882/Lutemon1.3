@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 // TrainingFragment.java
 public class TrainingFragment extends Fragment {
+
     private RecyclerView recyclerView;
     private TrainingAdapter adapter;
 
@@ -32,6 +33,7 @@ public class TrainingFragment extends Fragment {
     }
 
     @Override
+
     public void onResume() {
         super.onResume();
         adapter.notifyDataSetChanged();

@@ -52,4 +52,13 @@ public class Storage {
             }
         }
     }
+    public void removeLutemon(int id) {
+        lutemonsMap.remove(id);
+        for (int i = 0; i < lutemons.size(); i++) {
+            if (lutemons.get(i).getId() == id) {
+                lutemons.remove(i);
+                break;
+            }
+        }
+    }
 }

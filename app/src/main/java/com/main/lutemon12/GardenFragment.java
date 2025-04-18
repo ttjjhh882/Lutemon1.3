@@ -36,7 +36,7 @@ public class GardenFragment extends Fragment {
 
         // 获取数据并设置适配器
         ArrayList<Lutemon> lutemons = Storage.getInstance().getAllLutemons();
-        adapter = new LutemonAdapter(lutemons);
+        adapter = new LutemonAdapter(lutemons, requireContext()); // 使用 requireContext()
         recyclerView.setAdapter(adapter);
         return view;
     }

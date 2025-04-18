@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Storage storage = Storage.getInstance();
+        Lutemon testLutemon = new FireLutemon(890,"小火");
+        storage.addLutemon(testLutemon);
         // 初始化底部导航栏
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

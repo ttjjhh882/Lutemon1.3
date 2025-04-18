@@ -1,6 +1,9 @@
 package com.main.lutemon12;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -71,21 +75,40 @@ public class TrainingAdapter extends RecyclerView.Adapter<TrainingAdapter.ViewHo
         holder.textHealth.setText("生命: " + lutemon.getHealth() + "/" + lutemon.getMaxHealth());
         holder.textExperience.setText("经验值: " + lutemon.getExperience()); // 显示经验值
 
+//        holder.btnTrain.setOnClickListener(v -> {
+//            String attribute = lutemon.train(); // 执行训练（经验值+1，随机属性+1）
+//            Storage.getInstance().updateLutemon(lutemon);
+//
+//            // 更新 UI
+//            holder.textAttack.setText("攻击: " + lutemon.getCurrentAttack());
+//            holder.textDefense.setText("防御: " + lutemon.getDefense());
+//            holder.textHealth.setText("生命: " + lutemon.getHealth() + "/" + lutemon.getMaxHealth());
+//            holder.textExperience.setText("经验值: " + lutemon.getExperience());
+//
+//            // 显示提升的属性
+//            Toast.makeText(context,
+//                    lutemon.getName() + " 训练完成！\n经验值+1，" + attribute + "+1",
+//                    Toast.LENGTH_SHORT).show();
+//        });
         holder.btnTrain.setOnClickListener(v -> {
-            String attribute = lutemon.train(); // 执行训练（经验值+1，随机属性+1）
-            Storage.getInstance().updateLutemon(lutemon);
+            MediaPlayer.create(context, R.raw.train_sound).start();
 
-            // 更新 UI
-            holder.textAttack.setText("攻击: " + lutemon.getCurrentAttack());
-            holder.textDefense.setText("防御: " + lutemon.getDefense());
-            holder.textHealth.setText("生命: " + lutemon.getHealth() + "/" + lutemon.getMaxHealth());
-            holder.textExperience.setText("经验值: " + lutemon.getExperience());
+            // 显示训练对话框
+            TrainingDialog dialog = new TrainingDialog();
+            dialog.show(((AppCompatActivity)context).getSupportFragmentManager(), "training_dialog");
 
-            // 显示提升的属性
-            Toast.makeText(context,
-                    lutemon.getName() + " 训练完成！\n经验值+1，" + attribute + "+1",
-                    Toast.LENGTH_SHORT).show();
+            // 异步执行训练逻辑
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                String attribute = lutemon.train();
+                Storage.getInstance().updateLutemon(lutemon);
+
+                // 更新UI
+                notifyItemChanged(position);
+                Toast.makeText(context, "训练完成！" + attribute + "+1",
+                        Toast.LENGTH_SHORT).show();
+            }, 2500); // 与动画同步
         });
+
     }
 
 
