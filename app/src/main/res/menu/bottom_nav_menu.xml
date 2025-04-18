@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:title="主页"
+        android:icon="@drawable/ic_home"/> <!-- 需提前添加图标 -->
+    <item
+        android:id="@+id/nav_garden"
+        android:title="家园"
+        android:icon="@drawable/ic_garden"/>
+    <item
+        android:id="@+id/nav_battle"
+        android:title="战斗"
+        android:icon="@drawable/ic_battle"/>
+    <item
+        android:id="@+id/nav_training"
+        android:title="训练"
+        android:icon="@drawable/ic_training"/>
+    <item
+        android:id="@+id/nav_stats"
+        android:title="统计"
+        android:icon="@drawable/ic_stats"/>
+</menu>
