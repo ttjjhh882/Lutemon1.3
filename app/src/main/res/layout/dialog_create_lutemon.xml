@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 输入名称 -->
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入Lutemon名称"
+        android:inputType="text"/>
+
+    <!-- 颜色选择标题 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="选择颜色"
+        android:textSize="16sp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- 颜色选项水平排列 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <!-- 红色 -->
+        <Button
+            android:id="@+id/btnColorRed"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FF0000"
+            android:text="红色"
+            android:textColor="@color/white"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 蓝色 -->
+        <Button
+            android:id="@+id/btnColorBlue"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#0000FF"
+            android:text="蓝色"
+            android:textColor="@color/white"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 白色 -->
+        <Button
+            android:id="@+id/btnColorWhite"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFFFFF"
+            android:text="白色"
+            android:textColor="@color/black"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 绿色 -->
+        <Button
+            android:id="@+id/btnColorGreen"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#00FF00"
+            android:text="绿色"
+            android:textColor="@color/white"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 粉色 -->
+        <Button
+            android:id="@+id/btnColorPink"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFC0CB"
+            android:text="粉色"
+            android:textColor="@color/black"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 橙色 -->
+        <Button
+            android:id="@+id/btnColorOrange"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFA500"
+            android:text="橙色"
+            android:textColor="@color/white"
+            android:layout_marginEnd="2dp"/>
+
+        <!-- 黑色 -->
+        <Button
+            android:id="@+id/btnColorBlack"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:backgroundTint="#000000"
+            android:text="黑色"
+            android:textColor="@color/white"
+            android:layout_marginEnd="2dp"/>
+    </LinearLayout>
+</LinearLayout>
